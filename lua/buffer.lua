@@ -36,6 +36,7 @@ vim.api.nvim_create_autocmd({ 'BufReadPre' }, {
                 ["code-snippets"] = "json",
                 ["code-workspace"] = "json",
                 dockerignore = "gitignore",
+                rsyncignore = "gitignore",
                 fvmrc = "json",
                 log = "log",
                 plist = "xml",
