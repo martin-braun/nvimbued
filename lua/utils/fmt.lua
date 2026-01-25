@@ -159,16 +159,20 @@ M.buf_try_use = function(formatters, configured_only)
     return false
 end
 
-M.buf_tabify = function()
-    vim.opt_local.expandtab = false
+M.buf_fillermod = function(show_tab, show_multispace)
     vim.opt_local.listchars = { -- from ./lua/buffer.lua with an invisible tab
         space = ' ',
-        tab = '  ',
-        multispace = '·',
+        tab = show_tab and '➾ ' or '  ',
+        multispace = show_multispace and '·' or ' ',
         lead = '·',
         trail = '•',
         nbsp = '⋯'
     }
+end
+
+M.buf_tabify = function()
+    vim.opt_local.expandtab = false
+    M.buf_fillermod(false, true)
 end
 
 M.buf_disable = function()
