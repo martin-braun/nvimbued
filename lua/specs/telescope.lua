@@ -57,7 +57,7 @@ M.opts = {
 
 M.config = function()
     -- dynamic layout strategy depending on the number of columns
-    local layout_strategies = require("telescope.pickers.layout_strategies")
+    local layout_strategies = require(M.main .. ".pickers.layout_strategies")
     layout_strategies.dynamic = function(
         self, max_columns, max_lines, layout_config)
         if vim.o.columns > 120 then
@@ -70,7 +70,6 @@ M.config = function()
             )
         end
     end
-
     require(M.main).setup(M.opts)
 end
 

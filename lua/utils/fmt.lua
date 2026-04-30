@@ -105,10 +105,10 @@ M.buf_try_use = function(formatters, configured_only)
         formatters = { formatters }
     end
     formatters_to_use = {}
-    -- select any locally configured and selected formatters first such as
-    -- a local dprint.json or prettier.config js,
-    -- this is always nil on browsers (see ./lua/format.lua), since we aren't
-    -- in any project with format configuration files
+    -- select any locally configured and selected formatters first such as a
+    -- local dprint.json or prettier.config js, this is always nil on browsers
+    -- (see ./lua/format.lua), since we aren't in any project with format
+    -- configuration files
     if minvim.configured_formatters ~= nil then
         for _, formatter in ipairs(formatters) do
             if vim.tbl_contains(minvim.configured_formatters, formatter) then
@@ -116,9 +116,9 @@ M.buf_try_use = function(formatters, configured_only)
             end
         end
     end
-    -- if not wanted, append all requested formatters anyways, otherise
-    -- skip to only use the given formatters when a local config
-    -- is available, such as dprint.json or prettier.config.js
+    -- if not wanted, append all requested formatters anyways, otherwise skip to
+    -- only use the given formatters when a local config is available, such as
+    -- dprint.json or prettier.config.js
     if not configured_only then
         for _, formatter in ipairs(formatters) do
             table.insert(formatters_to_use, formatter)

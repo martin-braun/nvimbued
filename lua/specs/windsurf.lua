@@ -15,7 +15,7 @@ M.keys = maps.keys
 M.opts = {}
 
 M.config = function()
-    --require(M.main).setup(M.opts) -- only when using the nvim plugin
+    --require(M.main).setup(M.opts) -- only when using the nvim plugin variant
     maps.config()
 end
 
