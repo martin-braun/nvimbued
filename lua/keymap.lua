@@ -24,6 +24,11 @@ vim.keymap.set('n', "<C-t>", "<CMD>terminal<CR>", {
     desc = "Create terminal buffer"
 })
 
+-- create terminal buffer and attach
+vim.keymap.set('n', "<leader>tt", "<CMD>vsplit<CR><CMD>wincmd l<CR><CMD>terminal<CR>a", {
+    desc = "Create terminal buffer"
+})
+
 -- exit terminal
 vim.keymap.set('t', "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
