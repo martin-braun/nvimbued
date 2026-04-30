@@ -36,4 +36,5 @@ nnoremap <C-j> <CMD>tabn<CR>
 nnoremap <C-k> <CMD>tabp<CR>
 nnoremap <C-q> <CMD>tabc<CR>
 autocmd FileType netrw nnoremap <buffer> <C-e> <CMD>Rex<CR>
+command! Inspect :echo synIDattr(synID(line("."),col("."),1),"name")
 
