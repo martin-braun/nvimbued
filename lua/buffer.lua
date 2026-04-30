@@ -42,7 +42,8 @@ vim.api.nvim_create_autocmd({ 'BufReadPre' }, {
                 plist = "xml",
                 rc = "sh",
                 reg = "dosini",
-                stignore = "gitignore",
+                stignore = "cmacro",
+                stglobalignore = "cmacro",
                 xaml = "xml",
             },
             filename = {
