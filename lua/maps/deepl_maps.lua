@@ -86,10 +86,6 @@ M.keys = {
         "<leader>trja", '<CMD>call deepl#v("JA")<CR>',
         mode = 'v', desc = "Translate to Japanese", remap = true
     },
-    {
-        "<leader>trko", '<CMD>call deepl#v("KO")<CR>',
-        mode = 'v', desc = "Translate to Korean", remap = true
-    },
 
 }
 
