@@ -1,8 +1,8 @@
 " This file is not part of your local nvim setup.
 " However, it is meant to be uploaded to remote systems
 " to let vim behave more like your local nvim setup.
-" Local install: cp .vimrc $HOME/
-" Remote install: scp .vimrc <alias>:.
+" Local install: `cp .vimrc $HOME/`
+" Remote install: `scp .vimrc <alias>:.`
 set clipboard^=unnamed,unnamedplus
 set number
 set relativenumber
