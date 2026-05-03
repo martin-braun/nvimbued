@@ -1,7 +1,7 @@
 {
   "auto-dark-mode.nvim": { "branch": "master", "commit": "e300259ec777a40b4b9e3c8e6ade203e78d15881" },
   "deepl.vim": { "branch": "main", "commit": "d062824f418b52bc15a373f0b282b5a3d8effea1" },
-  "firenvim": { "branch": "master", "commit": "899206da6ec88e476d3f96df5e5ef48e37dc87d2" },
+  "firenvim": { "branch": "master", "commit": "f84ab3f707a237d915f6a2e2d597708e66e3e66f" },
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
   "nightfox.nvim": { "branch": "main", "commit": "ba47d4b4c5ec308718641ba7402c143836f35aa9" },
   "nvim-treesitter": { "branch": "master", "commit": "cf12346a3414fa1b06af75c79faebe7f76df080a" },
