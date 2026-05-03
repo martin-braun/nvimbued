@@ -60,6 +60,9 @@ buffers).
 - Also compatible with `tmux`, use `<C-t>` as your PREFIX in `tmux`, so that you
   can rely on the `<C-b>` in remote sessions where you should use `vim`, not
   `nvim`
+- Smart theming adapts to system brightness with
+  [Tonsky highlights](https://tonsky.me/blog/syntax-highlighting/) for light
+  mode
 
 ## Installation + Quickstart
 

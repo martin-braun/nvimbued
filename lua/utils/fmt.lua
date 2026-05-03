@@ -83,6 +83,13 @@ local get_dart_prgcall = function()
         ' --page-width 80 --indent 0'
 end
 
+local get_ktfmt_prgcall = function()
+    return minvim.prgs.ktfmt .. ' --kotlinlang-style --enable-editorconfig' ..
+        ' --stdin-name=' ..
+        '"' .. vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) .. '"' ..
+        ' -' -- stdin mode
+end
+
 M.buf_try_use = function(formatters, configured_only)
     if not wnd.is_terminal() then
         -- IDEs have their own plugins and extensions to format code,
@@ -98,6 +105,7 @@ M.buf_try_use = function(formatters, configured_only)
     local post = not sys.is_windows()
     and ' 2>/dev/null || cat "' .. tmp_fmt .. '"'
     or ' 2>NUL < "' .. tmp_fmt .. '" || TYPE "' .. tmp_fmt .. '"'
+    -- post = '' -- for debugging
     if formatters == nil then
         return false
     end
@@ -153,6 +161,10 @@ M.buf_try_use = function(formatters, configured_only)
         elseif formatter == "dart" and minvim.prgs.dart then
             vim.opt_local.equalprg = pre .. get_dart_prgcall() .. post
             vim.opt_local.formatprg = pre .. get_dart_prgcall() .. post
+            return true
+        elseif formatter == "ktfmt" and minvim.prgs.ktfmt then
+            vim.opt_local.equalprg = pre .. get_ktfmt_prgcall() .. post
+            vim.opt_local.formatprg = pre .. get_ktfmt_prgcall() .. post
             return true
         end
     end
