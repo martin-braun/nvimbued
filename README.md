@@ -1,6 +1,6 @@
-# MinVim
+# `nvimbued` ~ NeoVim Imbued
 
-My fast simple minimal well-structured NeoVim configuration.
+My imbued fast simple minimal well-structured NeoVim configuration.
 
 **Rather making compromises than bloating and slowing down.**
 
@@ -94,8 +94,8 @@ Ensure you have:
 ### Clone configuration
 
 ```sh
-git clone git@github.com:<yourusername>/minvim.git
-cd minvim
+git clone git@github.com:<yourusername>/nvimbued.git
+cd nvimbued
 git checkout -b custom
 ./install
 ```

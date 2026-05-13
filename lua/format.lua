@@ -25,7 +25,7 @@ vim.opt.expandtab = true
 if not wnd.is_terminal() then
     -- find a local formatter configuration and store it to prefer it later,
     -- but skip if we are in the browser or some IDE that knows how to format
-    minvim.configured_formatters = (function()
+    nvimbued.configured_formatters = (function()
         -- local dir = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":h")
         local dir = vim.fn.getcwd()
         -- NOTE(martin-braun): It would be ok to execute this for each buffer,

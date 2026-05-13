@@ -3,14 +3,14 @@ local wnd = require("utils.wnd")
 local M = {}
 
 local get_dprint_prgcall = function()
-    if minvim.configured_formatters ~= nil and
-        vim.tbl_contains(minvim.configured_formatters, "dprint") then
-        return minvim.prgs.dprint .. ' fmt' ..
+    if nvimbued.configured_formatters ~= nil and
+        vim.tbl_contains(nvimbued.configured_formatters, "dprint") then
+        return nvimbued.prgs.dprint .. ' fmt' ..
             ' --stdin ' .. '"' ..
             vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) .. '"'
     end
     -- as fallback we use a local config in this vim configuration (nvim only):
-    return minvim.prgs.dprint .. ' fmt' ..
+    return nvimbued.prgs.dprint .. ' fmt' ..
         ' --stdin ' ..
         '"' .. vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) .. '"' ..
         ' -c ' ..
@@ -21,15 +21,15 @@ local get_dprint_prgcall = function()
 end
 
 local get_prettier_prgcall = function()
-    if minvim.configured_formatters ~= nil and
-        vim.tbl_contains(minvim.configured_formatters, "prettier") then
-        return minvim.prgs.prettier ..
+    if nvimbued.configured_formatters ~= nil and
+        vim.tbl_contains(nvimbued.configured_formatters, "prettier") then
+        return nvimbued.prgs.prettier ..
             ' --stdin-filepath ' .. '"' ..
             vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) ..
             '"'
     end
     -- as fallback we use a local config in this vim configuration (nvim only):
-    return minvim.prgs.prettier ..
+    return nvimbued.prgs.prettier ..
         ' --stdin-filepath ' ..
         '"' .. vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) .. '"' ..
         ' --config ' ..
@@ -40,19 +40,19 @@ local get_prettier_prgcall = function()
 end
 
 local get_shfmt_prgcall = function()
-    return minvim.prgs.shfmt ..
+    return nvimbued.prgs.shfmt ..
         ' --indent 0 -bn -ci -sr' ..
         ' --filename ' ..
         '"' .. vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) .. '"'
 end
 
 local get_rustfmt_prgcall = function()
-    if minvim.configured_formatters ~= nil and
-        vim.tbl_contains(minvim.configured_formatters, "rustfmt") then
-        return minvim.prgs.rustfmt
+    if nvimbued.configured_formatters ~= nil and
+        vim.tbl_contains(nvimbued.configured_formatters, "rustfmt") then
+        return nvimbued.prgs.rustfmt
     end
     -- as fallback we use a local config in this vim configuration (nvim only):
-    return minvim.prgs.rustfmt ..
+    return nvimbued.prgs.rustfmt ..
         ' --config-path ' ..
         '"' ..
         vim.fn.stdpath('config') .. package.config:sub(1, 1) ..
@@ -61,22 +61,22 @@ local get_rustfmt_prgcall = function()
 end
 
 local get_gofmt_prgcall = function()
-    return minvim.prgs.gofmt
+    return nvimbued.prgs.gofmt
 end
 
 local get_zig_prgcall = function()
-    return minvim.prgs.zig .. " fmt --stdin"
+    return nvimbued.prgs.zig .. " fmt --stdin"
 end
 
 local get_dart_prgcall = function()
-    if minvim.configured_formatters ~= nil and
-        vim.tbl_contains(minvim.configured_formatters, "dart") then
-        return minvim.prgs.dart .. ' format' ..
+    if nvimbued.configured_formatters ~= nil and
+        vim.tbl_contains(nvimbued.configured_formatters, "dart") then
+        return nvimbued.prgs.dart .. ' format' ..
             ' --stdin-name ' ..
             '"' .. vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) .. '"' ..
             ' -o show'
     end
-    return minvim.prgs.dart .. ' format' ..
+    return nvimbued.prgs.dart .. ' format' ..
         ' --stdin-name ' ..
         '"' .. vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) .. '"' ..
         ' -o show' ..
@@ -84,7 +84,7 @@ local get_dart_prgcall = function()
 end
 
 local get_ktfmt_prgcall = function()
-    return minvim.prgs.ktfmt .. ' --kotlinlang-style --enable-editorconfig' ..
+    return nvimbued.prgs.ktfmt .. ' --kotlinlang-style --enable-editorconfig' ..
         ' --stdin-name=' ..
         '"' .. vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) .. '"' ..
         ' -' -- stdin mode
@@ -117,9 +117,9 @@ M.buf_try_use = function(formatters, configured_only)
     -- local dprint.json or prettier.config js, this is always nil on browsers
     -- (see ./lua/format.lua), since we aren't in any project with format
     -- configuration files
-    if minvim.configured_formatters ~= nil then
+    if nvimbued.configured_formatters ~= nil then
         for _, formatter in ipairs(formatters) do
-            if vim.tbl_contains(minvim.configured_formatters, formatter) then
+            if vim.tbl_contains(nvimbued.configured_formatters, formatter) then
                 table.insert(formatters_to_use, formatter)
             end
         end
@@ -134,35 +134,35 @@ M.buf_try_use = function(formatters, configured_only)
     end
     -- apply first formatter to use to equalprg/formatprg, if its available
     for _, formatter in ipairs(formatters_to_use) do
-        if formatter == "dprint" and minvim.prgs.dprint then
+        if formatter == "dprint" and nvimbued.prgs.dprint then
             vim.opt_local.equalprg = pre .. get_dprint_prgcall() .. post
             vim.opt_local.formatprg = pre .. get_dprint_prgcall() .. post
             return true
-        elseif formatter == "prettier" and minvim.prgs.prettier then
+        elseif formatter == "prettier" and nvimbued.prgs.prettier then
             vim.opt_local.equalprg = pre .. get_prettier_prgcall() .. post
             vim.opt_local.formatprg = pre .. get_prettier_prgcall() .. post
             return true
-        elseif formatter == "shfmt" and minvim.prgs.shfmt then
+        elseif formatter == "shfmt" and nvimbued.prgs.shfmt then
             vim.opt_local.equalprg = pre .. get_shfmt_prgcall() .. post
             vim.opt_local.formatprg = pre .. get_shfmt_prgcall() .. post
             return true
-        elseif formatter == "rustfmt" and minvim.prgs.rustfmt then
+        elseif formatter == "rustfmt" and nvimbued.prgs.rustfmt then
             vim.opt_local.equalprg = pre .. get_rustfmt_prgcall() .. post
             vim.opt_local.formatprg = pre .. get_rustfmt_prgcall() .. post
             return true
-        elseif formatter == "gofmt" and minvim.prgs.gofmt then
+        elseif formatter == "gofmt" and nvimbued.prgs.gofmt then
             vim.opt_local.equalprg = pre .. get_gofmt_prgcall() .. post
             vim.opt_local.formatprg = pre .. get_gofmt_prgcall() .. post
             return true
-        elseif formatter == "zig" and minvim.prgs.zig then
+        elseif formatter == "zig" and nvimbued.prgs.zig then
             vim.opt_local.equalprg = pre .. get_zig_prgcall() .. post
             vim.opt_local.formatprg = pre .. get_zig_prgcall() .. post
             return true
-        elseif formatter == "dart" and minvim.prgs.dart then
+        elseif formatter == "dart" and nvimbued.prgs.dart then
             vim.opt_local.equalprg = pre .. get_dart_prgcall() .. post
             vim.opt_local.formatprg = pre .. get_dart_prgcall() .. post
             return true
-        elseif formatter == "ktfmt" and minvim.prgs.ktfmt then
+        elseif formatter == "ktfmt" and nvimbued.prgs.ktfmt then
             vim.opt_local.equalprg = pre .. get_ktfmt_prgcall() .. post
             vim.opt_local.formatprg = pre .. get_ktfmt_prgcall() .. post
             return true

@@ -1,6 +1,6 @@
 local cmd = require("utils/cmd")
 
-minvim.prgs = {
+nvimbued.prgs = {
     dprint = cmd.get_resolved_invoker_of("dprint"),
     prettier = cmd.get_resolved_invoker_of("prettier"),
     shfmt = cmd.get_resolved_invoker_of("shfmt"),

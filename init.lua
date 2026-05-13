@@ -1,4 +1,4 @@
-minvim = {} -- global custom state for this configuration
+nvimbued = {} -- global custom state for this configuration
 require("common") -- basic behavior
 require("buffer") -- buffer behavior
 require("control") -- control behavior
