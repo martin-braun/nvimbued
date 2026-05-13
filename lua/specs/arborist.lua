@@ -12,11 +12,8 @@ M.opts = {
     concurrency = 1,
     ensure_installed = {
         "bash",
-        "c", -- already boundled
-        "lua", -- already boundled
-        "markdown",
-        "python",
         "regex",
+        -- c, lua, vim and markdown are already boundled with NeoVim
     },
     disable = {
         -- indent = { "markdown" },
