@@ -14,7 +14,8 @@ Not meaningful configuration was avoided, to reduce the technical footprint/debt
 and ensure very high cognitive and systematic compatbiility to vanilla (Neo)Vim.
 This configuration leverages `netrw` and native tabs and it just uses
 `telescope.nvim` to navigate beyond those capabilities (to find files or
-buffers).
+buffers). It also uses `arborist.nvim` to auto-manage treesitter parsers for
+you.
 
 > An idiot admires complexity, a genius admires simplicity.
 >
@@ -24,19 +25,24 @@ buffers).
 
 - State of the art plugin system using `lazy.nvim` with folke's clear
   suggestions using the one-spec-per-file approach and prefering `main`/`opts`
-  over the `config` callback, open Lazy via `<Space>l`
+  over the `config` callback, open Lazy via `<Space>l`, update your all plugins
+  with `<Space>uu`
 - State of the art fuzzy finding using `telescope.nvim` via `ripgrep` with
   improved defaults such as a sane dynamic layout strategy and a consistent
   result ordering, `<Space>b` to navigate buffers, `<Space>e` to find files and
   `<C-7>` to live grep
-- Smart syntax highlighting and indenting using `nvim-treesitter`
+- Smart syntax highlighting and indenting using Treesitter
+- Fully automated Treesitter parser management that needs zero human
+  intervention using `arborist.nvim`; except for the most basic parsers that
+  will install during first launch, all necessary parsers will install as you
+  need them
 - With `dprint` or `prettier` configurations in the `pwd` ancestor tree as well
   as when editing files with advanced formatting requirements (where
-  `nvim-treesitter`'s experimental indentation just isn't good enough anymore)
-  the built-in `formatprg` and `equalprg` is set to launch the preferred
-  external formatter, respectively
-- Free AI powered code suggestions using Windsurf (opt-in, boot via `<Space>me`,
-  authenticate via `<Space>ma`)
+  Treesitter's experimental indentation just isn't good enough anymore) the
+  built-in `formatprg` and `equalprg` are set to launch the preferred external
+  formatters
+- Free simply AI powered code suggestions using Windsurf (opt-in, boot via
+  `<Space>me`, authenticate via `<Space>ma`)
 - Free inline translations via DeepL (opt-in, authenticate by exporting your
   `DEEPL_AUTH_KEY` before launching `nvim`, then translate in visual mode via
   `<leader>trxx` where `xx` is your target language code, i.e. `<leader>tren`
@@ -44,7 +50,7 @@ buffers).
 - Save all buffers with persistent auto session storage (`Session.vim`) as well
   as hidden buffer clean up when hitting `<Space>ss`
 - Bridges for `firenvim` and `vscode-neovim` to use NeoVim in the browser and in
-  VSCode/VSCodium/Windsurf
+  VSCode/VSCodium/Windsurf; VSCode support is experimental
 - Overly simplified user commands (`cmds`) to substitute otherwise necessary
   dependencies
 - A backed-in lua util library for common tasks (`utils`)
@@ -56,17 +62,18 @@ buffers).
 - **LSP free** by design, because LSPs are too slow and complex, use an IDE
   instead, I want my terminal to be snappy and fast
 - A simple `.vimrc` for you to upload to remote systems to let `vim` in your SSH
-  sessions behave more like your `nvim`
+  sessions behave more like your local `nvim`
 - Also compatible with `tmux`, use `<C-t>` as your PREFIX in `tmux`, so that you
   can rely on the `<C-b>` in remote sessions where you should use `vim`, not
   `nvim`
-- Smart theming adapts to system brightness with
+- Smart theming that adapts to your system brightness with
   [Tonsky highlights](https://tonsky.me/blog/syntax-highlighting/) for light
   mode
 
 ## Installation + Quickstart
 
 > [!CAUTION]
+>
 > Before you start backup your `$HOME/.config/nvim` directory. Please read the
 > `./install` script before running it! I'm not responsible for any damage. This
 > repository is primary for me to backing up my personal custom configuration,
@@ -80,8 +87,9 @@ configuration for your personal needs.
 Ensure you have:
 
 - NeoVim (`nvim`)
+- Treesitter (`tree-sitter`) used with `arborist.nvim`
 - tree (`tree`) used by `GitTree`
-- ripgrep (`rg`) used by `telescope`
+- ripgrep (`rg`) used by `telescope.nvim`
 
 ### Clone configuration
 
@@ -91,6 +99,9 @@ cd minvim
 git checkout -b custom
 ./install
 ```
+
+**Now start NeoVim twice and hit `<Space>uu` to ensure everything is up to
+date.**
 
 ### Ensure additional formatters
 
@@ -121,9 +132,11 @@ alias vim='{ f() { command -v nvim >/dev/null 2>&1 && { export NVIM_APPNAME="nvi
 > You can also just store your API key in plain text, since the API is free, but
 > it is not recommend. If you skip setting `DEEPL_AUTH_KEY`, `deepl.vim` will
 > not load which is a fine option if you don't need translations integrated into
-> NeoVim. `deepl.vim` is also compatible with Visual Studio Code or one of its
-> supported forks, but you have to launch the IDE from within `nvim`, unless you
-> set the `DEEPL_AUTH_KEY` environment variable in an alias that covers the
+> NeoVim.
+>
+> By the way, `deepl.vim` is also compatible with Visual Studio Code or one of
+> its supported forks, but you have to launch the IDE from within `nvim`, unless
+> you set the `DEEPL_AUTH_KEY` environment variable in an alias that covers the
 > `code`/`windsurf` CLI launcher as well. This all leads to the fact that
 > launching any VSCode forks from your App Drawer will disable the plugin.
 
@@ -145,11 +158,9 @@ there, simply **f**ind your **k**eymaps via `<Space>fk` or just explore
 Updating from upstream means to pull and merge my `master` into your `custom`
 branch. You should resolve any conflicts afterwards.
 
-_t.b.d_
-
 ## Compatibility Bridges
 
-### VSCode
+### VSCode (experimental)
 
 This configuration is compatible with
 [vscode-neovim/vscode-neovim](https://github.com/vscode-neovim/vscode-neovim),
