@@ -66,6 +66,8 @@ you.
 - Also compatible with `tmux`, use `<C-t>` as your PREFIX in `tmux`, so that you
   can rely on the `<C-b>` in remote sessions where you should use `vim`, not
   `nvim`
+- Quick exit keybinds (`ZZ`/`ZQ`) will block if a terminal buffer has a
+  different process than the shell in front
 - Smart theming that adapts to your system brightness with
   [Tonsky highlights](https://tonsky.me/blog/syntax-highlighting/) for light
   mode

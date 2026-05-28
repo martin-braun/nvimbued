@@ -23,7 +23,9 @@ nnoremap <leader>yF <CMD>let @+=expand("%:p")<CR>
 nnoremap <leader>x <CMD>bd<CR>
 nnoremap <leader>X <CMD>bd!<CR>
 nnoremap <leader>ff gg=G''
-nnoremap <leader>tt <CMD>vsplit<CR><CMD>wincmd l<CR><CMD>terminal<CR>a
+nnoremap <leader>tt <CMD>terminal<CR>a
+nnoremap <leader>ts <CMD>split<CR><CMD>wincmd j<CR><CMD>terminal<CR>a
+nnoremap <leader>tv <CMD>vsplit<CR><CMD>wincmd l<CR><CMD>terminal<CR>a
 nnoremap <C-s> <CMD>w<CR>
 nnoremap <leader>ss <CMD>wa<CR>
 nnoremap <leader>L <CMD>set nonumber! norelativenumber!<CR>

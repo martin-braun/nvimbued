@@ -2,7 +2,7 @@
   "arborist.nvim": { "branch": "main", "commit": "fdeef56c2840c6772b9f68c5774ed87e9340ec7d" },
   "auto-dark-mode.nvim": { "branch": "main", "commit": "54058b4fe414bd64bd2904a6f8a63f1f14e3d8df" },
   "deepl.vim": { "branch": "main", "commit": "d062824f418b52bc15a373f0b282b5a3d8effea1" },
-  "firenvim": { "branch": "master", "commit": "ab0e51bfa4e01191d0bfd1eee15388ac816e702e" },
+  "firenvim": { "branch": "master", "commit": "af775c4a1cef5a1e833ae5c6d81afe229ceb639e" },
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
   "nightfox.nvim": { "branch": "main", "commit": "26b61b1f856ec37cae3cb64f5690adb955f246a1" },
   "plenary.nvim": { "branch": "master", "commit": "74b06c6c75e4eeb3108ec01852001636d85a932b" },

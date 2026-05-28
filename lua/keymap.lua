@@ -25,8 +25,14 @@ vim.keymap.set('n', "<C-t>", "<CMD>terminal<CR>", {
 })
 
 -- create terminal buffer and attach
-vim.keymap.set('n', "<leader>tt", "<CMD>vsplit<CR><CMD>wincmd l<CR><CMD>terminal<CR>a", {
+vim.keymap.set('n', "<leader>tt", "<CMD>terminal<CR>a", {
     desc = "Create terminal buffer"
+})
+vim.keymap.set('n', "<leader>ts", "<CMD>split<CR><CMD>wincmd j<CR><CMD>terminal<CR>a", {
+    desc = "Create terminal buffer after horizontal split"
+})
+vim.keymap.set('n', "<leader>tv", "<CMD>vsplit<CR><CMD>wincmd l<CR><CMD>terminal<CR>a", {
+    desc = "Create terminal buffer after vertical split"
 })
 
 -- exit terminal
@@ -95,7 +101,7 @@ if wnd.is_terminal() then
     vim.keymap.set(
         'n',
         "ZZ",
-        "<CMD>wa<CR><CMD>BufQuitHidden<CR><CMD>mks!<CR><CMD>qa<CR>", {
+        "<CMD>wa<CR><CMD>BufQuitHidden<CR><CMD>mks!<CR><CMD>BufExitGuard<CR><CMD>qa<CR>", {
             desc = "Save all buffers, wipe hidden buffers, " .. "store session and quit"
         }
     )
@@ -120,7 +126,7 @@ vim.keymap.set('n', "<leader>L", "<CMD>set nonumber! norelativenumber!<CR>", {
 )
 
 -- quit all buffers
-vim.keymap.set('n', "ZQ", "<CMD>qa!<CR>", {
+vim.keymap.set('n', "ZQ", "<CMD>BufExitGuard<CR><CMD>qa!<CR>", {
     desc = "Delete all buffers and quit" }
 )
 
