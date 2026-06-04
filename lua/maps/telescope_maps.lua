@@ -97,6 +97,11 @@ M.keys = {
         "<leader>fk", "<CMD>Telescope keymaps<CR>",
         mode = 'n', desc = "Find keymaps"
     },
+    -- (also as default command palette)
+    {
+        "<C-p>", "<CMD>Telescope keymaps<CR>",
+        mode = 'n', desc = "Command Palette"
+    },
 
     -- git
     {

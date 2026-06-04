@@ -146,7 +146,7 @@ alias vim='{ f() { command -v nvim >/dev/null 2>&1 && { export NVIM_APPNAME="nvi
 
 Restart your terminal and launch `vim` (your custom alias) to launch
 `nvim +"sil! so Session.vim"` which sources a local session if it exists. From
-there, simply **f**ind your **k**eymaps via `<Space>fk` or just explore
+there, simply **f**ind your **k**eymaps via `<Ctrl-P>` or `<Space>fk` or explore
 [keymaps.lua](./lua/keymap.lua) and
 [telescope_maps.lua](./lua/maps/telescope_maps.lua)
 
