@@ -102,7 +102,7 @@ if wnd.is_terminal() then
         'n',
         "ZZ",
         "<CMD>wa<CR><CMD>BufQuitHidden<CR><CMD>mks!<CR><CMD>BufExitGuard<CR><CMD>qa<CR>", {
-            desc = "Save all buffers, wipe hidden buffers, " .. "store session and quit"
+            desc = "Save all buffers, wipe hidden buffers, store session and quit"
         }
     )
 

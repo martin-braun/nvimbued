@@ -19,6 +19,7 @@
   "biome": {
   },
   "ruff": {
+    "lineLength": 80
   },
   "jupyter": {
   },
