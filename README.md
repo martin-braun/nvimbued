@@ -50,7 +50,7 @@ you.
 - Save all buffers with persistent auto session storage (`Session.vim`) as well
   as hidden buffer clean up when hitting `<Space>ss`
 - Bridges for `firenvim` and `vscode-neovim` to use NeoVim in the browser and in
-  VSCode/VSCodium/Windsurf; VSCode support is experimental
+  VSCode/VSCodium; VSCode support is experimental
 - Overly simplified user commands (`cmds`) to substitute otherwise necessary
   dependencies
 - A backed-in lua util library for common tasks (`utils`)
@@ -139,7 +139,7 @@ alias vim='{ f() { command -v nvim >/dev/null 2>&1 && { export NVIM_APPNAME="nvi
 > By the way, `deepl.vim` is also compatible with Visual Studio Code or one of
 > its supported forks, but you have to launch the IDE from within `nvim`, unless
 > you set the `DEEPL_AUTH_KEY` environment variable in an alias that covers the
-> `code`/`windsurf` CLI launcher as well. This all leads to the fact that
+> `code` CLI launcher as well. This all leads to the fact that
 > launching any VSCode forks from your App Drawer will disable the plugin.
 
 ### Finalize
@@ -195,14 +195,7 @@ make everything work properly.
 > ln -sf "$(pwd)/.vscode/keybindings.json" "$HOME/Library/Application Support/Code/User/keybindings.json"
 > ln -sf "$(pwd)/.vscode/settings.json" "$HOME/Library/Application Support/VSCodium/User/settings.json"
 > ln -sf "$(pwd)/.vscode/keybindings.json" "$HOME/Library/Application Support/VSCodium/User/keybindings.json"
-> ln -sf "$(pwd)/.vscode/settings.json" "$HOME/Library/Application Support/Windsurf/User/settings.json"
-> ln -sf "$(pwd)/.vscode/keybindings.json" "$HOME/Library/Application Support/Windsurf/User/keybindings.json"
 > ```
-
-> [!WARNING]
-> The Cascade window in Windsurf has no proper focus clause for the keybinding
-> setup, so leader keyboard shortcuts will only work in the editor window while
-> it's open. Cascade can be toggled via `<C-l>`.
 
 ### FireNvim
 

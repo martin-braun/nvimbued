@@ -9,4 +9,4 @@ require("keymap") -- base non-plugin specific keymaps
 require("plugin") -- lazy.nvim plugin manager (loads specs and plugin maps)
 require("provs") -- providers (ignored for non terminal window modes)
 require("cmds") -- load user commands
-require("ide") -- compatibility layer for vscode/vscodium/windsurf
+require("ide") -- compatibility layer for vscode/vscodium

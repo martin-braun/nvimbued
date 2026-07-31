@@ -17,7 +17,7 @@ rm -rf "$HOME/.local/share/nvim"
 rm -rf "$HOME/.local/share/$NVIM_APPNAME"
 
 ln -nsf "$from" "$to"
-cp "$from/.vimrc" $HOME/
+cp "$from/.vimrc" "$HOME"/
 
 set +e
 nvim

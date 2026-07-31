@@ -297,10 +297,4 @@ if wnd.is_terminal() then
         desc = "Open current file in VSCode"
     })
 
-    -- open Windsurf
-    vim.keymap.set('n', "gW", "<CMD>Windsurf<CR>", {
-        desc = "Open current file in Windsurf"
-    })
-
 end
-

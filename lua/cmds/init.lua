@@ -6,7 +6,6 @@ local imports = {
     { wnd.is_terminal(), "code" },
     { wnd.is_terminal(), "git_tree" },
     { wnd.is_terminal(), "grep" },
-    { wnd.is_terminal(), "windsurf" },
 }
 
 for _, import in ipairs(imports) do

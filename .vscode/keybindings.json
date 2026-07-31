@@ -183,7 +183,7 @@
   {
     "key": "space b",
     "command": "workbench.files.action.focusOpenEditorsView",
-    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible && (windsurf.cascadePanel.active && !view.windsurf.cascadePanel.visible)"
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
     "key": "ctrl+space",
@@ -193,17 +193,17 @@
   {
     "key": "space e",
     "command": "workbench.action.quickOpen",
-    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible && (windsurf.cascadePanel.active && !view.windsurf.cascadePanel.visible)"
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
     "key": "space shift+e",
     "command": "workbench.action.quickOpenWithModes",
-    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible && (windsurf.cascadePanel.active && !view.windsurf.cascadePanel.visible)"
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
     "key": "space ctrl+space",
     "command": "workbench.action.quickOpenWithModes",
-    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible && (windsurf.cascadePanel.active && !view.windsurf.cascadePanel.visible)"
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
     "key": "ctrl+i",
@@ -218,12 +218,12 @@
   {
     "key": "space c",
     "command": "workbench.action.files.newUntitledFile",
-    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible && (windsurf.cascadePanel.active && !view.windsurf.cascadePanel.visible)"
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
     "key": "space t c",
     "command": "workbench.action.files.newUntitledFile",
-    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible && (windsurf.cascadePanel.active && !view.windsurf.cascadePanel.visible)"
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
     "key": "ctrl+n",
@@ -242,12 +242,12 @@
   {
     "key": "space t p",
     "command": "workbench.action.nextEditorInGroup",
-    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible && (windsurf.cascadePanel.active && !view.windsurf.cascadePanel.visible)"
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
     "key": "space p",
     "command": "workbench.action.previousPanelView",
-    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible && (windsurf.cascadePanel.active && !view.windsurf.cascadePanel.visible)"
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
     "key": "ctrl+k",
@@ -262,12 +262,12 @@
   {
     "key": "space t n",
     "command": "workbench.action.nextEditorInGroup",
-    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible && (windsurf.cascadePanel.active && !view.windsurf.cascadePanel.visible)"
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
     "key": "space n",
     "command": "workbench.action.nextEditorInGroup",
-    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible && (windsurf.cascadePanel.active && !view.windsurf.cascadePanel.visible)"
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
     "key": "ctrl+j",
@@ -277,47 +277,47 @@
   {
     "key": "space j",
     "command": "workbench.action.moveEditorRightInGroup",
-    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible && (windsurf.cascadePanel.active && !view.windsurf.cascadePanel.visible)"
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
     "key": "space k",
     "command": "workbench.action.moveEditorLeftInGroup",
-    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible && (windsurf.cascadePanel.active && !view.windsurf.cascadePanel.visible)"
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
     "key": "space x",
     "command": "workbench.action.closeActiveEditor",
-    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible && (windsurf.cascadePanel.active && !view.windsurf.cascadePanel.visible)"
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
     "key": "space shift+x",
     "command": "workbench.action.revertAndCloseActiveEditor",
-    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible && (windsurf.cascadePanel.active && !view.windsurf.cascadePanel.visible)"
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
     "key": "space t o",
     "command": "workbench.action.closeOtherEditors",
-    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible && (windsurf.cascadePanel.active && !view.windsurf.cascadePanel.visible)"
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
     "key": "space f f",
     "command": "editor.action.formatDocument",
-    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible && (windsurf.cascadePanel.active && !view.windsurf.cascadePanel.visible)"
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
     "key": "space r n",
     "command": "editor.action.refactor",
-    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible && (windsurf.cascadePanel.active && !view.windsurf.cascadePanel.visible)"
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
     "key": "space y f",
     "command": "copyRelativeFilePath",
-    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible && (windsurf.cascadePanel.active && !view.windsurf.cascadePanel.visible)"
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
     "key": "space y shift-f",
     "command": "copyFilePath",
-    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible && (windsurf.cascadePanel.active && !view.windsurf.cascadePanel.visible)"
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
     "key": "ctrl+s",
@@ -332,12 +332,12 @@
         "workbench.action.closeOtherEditors"
       ]
     },
-    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible && (windsurf.cascadePanel.active && !view.windsurf.cascadePanel.visible)"
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
     "key": "space f k",
     "command": "workbench.action.openGlobalKeybindings",
-    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible && (windsurf.cascadePanel.active && !view.windsurf.cascadePanel.visible)"
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
     "key": "shift+z shift+z",
@@ -348,12 +348,12 @@
         "workbench.action.closeWindow"
       ]
     },
-    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible && (windsurf.cascadePanel.active && !view.windsurf.cascadePanel.visible)"
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
     "key": "shift+z shift+q",
     "command": "workbench.action.closeWindow",
-    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible && (windsurf.cascadePanel.active && !view.windsurf.cascadePanel.visible)"
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
     "key": "ctrl+p",
@@ -458,7 +458,7 @@
   {
     "key": "space g",
     "command": "workbench.scm.focus",
-    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible && !view.windsurf.cascadePanel.visible"
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
     "key": "ctrl+c",
@@ -727,26 +727,6 @@
   {
     "key": "ctrl+l",
     "command": "workbench.panel.chat"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "windsurf.prioritized.chat.open",
-    "when": "windsurf.cascadePanel.active && (!view.windsurf.cascadePanel.visible || editorTextFocus)"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "windsurf.openCascade",
-    "when": "windsurf.cascadePanel.active && view.windsurf.cascadePanel.visible"
-  },
-  {
-    "key": "alt+l",
-    "command": "-codeium.chatAboutBlock",
-    "when": "editorTextFocus && !inlineSuggestionsVisible"
-  }
-  {
-    "key": "ctrl+h",
-    "command": "windsurf.prioritized.explainProblem",
-    "when": "windsurf.cascadePanel.active && editorFocus"
   },
   {
     "key": "ctrl+p",
