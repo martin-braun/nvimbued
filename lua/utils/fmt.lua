@@ -171,12 +171,12 @@ M.buf_try_use = function(formatters, configured_only)
     return false
 end
 
-M.buf_fillermod = function(show_tab, show_multispace)
+M.buf_fillermod = function(show_tab, show_multispace, show_lead)
     vim.opt_local.listchars = { -- from ./lua/buffer.lua with an invisible tab
         space = ' ',
         tab = show_tab and '➾ ' or '  ',
         multispace = show_multispace and '·' or ' ',
-        lead = '·',
+        lead = show_lead and '·' or ' ',
         trail = '•',
         nbsp = '⋯'
     }
@@ -184,10 +184,10 @@ end
 
 M.buf_tabify = function()
     vim.opt_local.expandtab = false
-    M.buf_fillermod(false, true)
+    M.buf_fillermod(false, true, true)
 end
 
-M.buf_disable = function()
+M.buf_disable_format = function()
     -- unbind format keymaps
     vim.cmd("noremap <buffer> = <nop>")
     vim.cmd("noremap <buffer> <leader>ff <nop>")
