@@ -1,18 +1,19 @@
 {
   "recommendations": [
+    "JulianIaquinandi.nvim-ui-modifier",
+    "XadillaX.viml",
     "asvetliakov.vscode-neovim",
     "chrislajoie.vscode-modelines",
-    "fr43nk.seito-openfile",
-    "JulianIaquinandi.nvim-ui-modifier",
     "dprint.dprint",
+    "fr43nk.seito-openfile",
+    "keifererikson.nightfox",
+    "michalpopek.dayfox-vsc",
     "timonwong.shellcheck",
-    "XadillaX.viml",
     "zokugun.vsix-manager",
     // Visual Studio Code Exclusives (do not use VSIX-Manager in VSCode):
     "ms-vscode.cpptools",
     "ms-vscode.cpptools-extension-pack",
     "platformio.platformio-ide"
-
-  ],
+ ],
   "unwantedRecommendations": []
 }

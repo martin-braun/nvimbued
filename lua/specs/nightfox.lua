@@ -245,9 +245,10 @@ M.config = function()
     lighttheme["@constructor"] = { fg = lightsyn.ident, bg = lightpal.transparent, style = stl.types }
     lighttheme["@constructor.lua"] = { link = "@punctuation.bracket" } -- Lua's constructor is { }
     lighttheme["@function"] = { fg = lightspec.fg0, bg = lightsyn.func, style = stl.functions } -- function definitions
-    lighttheme["@function.call.bash"] = { lightspec.fg0, bg =lightpal.transparent, style = stl.functions }
     lighttheme["@function.builtin"] = { fg = lightspec.fg0, style = stl.builtin } -- built-in functions
+    lighttheme["@function.call.bash"] = { lightspec.fg0, bg =lightpal.transparent, style = stl.functions }
     lighttheme["@function.macro"] = { fg = lightspec.fg0, style = stl.builtin } -- preprocessor macros
+    lighttheme["@function.method.call.solidity"] = { lightspec.fg0, bg =lightpal.transparent, style = stl.functions }
     lighttheme["@keyword.return"] = { fg = lightspec.fg0, style = stl.builtin } -- keywords like `return` and `yield`
     lighttheme["@label.json"] = { fg=lightspec.fg0 } -- For labels: label: in C and :label: in Lua.
     lighttheme["@markup.math"] = { fg=lightspec.fg0, bg=lightsyn.number } -- math environments (e.g. `$ ... $` in LaTeX)

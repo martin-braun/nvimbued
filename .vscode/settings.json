@@ -56,7 +56,7 @@
     "statusBar.border",
     "statusBar.noFolderBackground",
     "statusBar.noFolderBorder",
-    "tab.activeBorder",
+    "tab.activeBorder"
   ],
   "nvim-ui.nvimColorInsert": "#d47eed",
   "nvim-ui.nvimColorNormal": "#77a3c4",
@@ -93,6 +93,8 @@
     }
   },
   "window.autoDetectColorScheme": true,
+  "workbench.preferredHighContrastColorTheme": "Dayfox",
+  "workbench.preferredDarkColorTheme": "Nightfox",
   "workbench.colorCustomizations": {
     "activityBar.background": "#00000000",
     "activityBar.foreground": "#009581",
@@ -114,7 +116,10 @@
     "tab.activeBorder": "#77a3c4"
   },
   "editor.rulers": [
-    80
+    {
+      "column": 80,
+      "color": "#666"
+    }
   ],
   "workbench.fontAliasing": "none",
   "workbench.startupEditor": "none",
@@ -125,4 +130,11 @@
   "telemetry.feedback.enabled": false,
   "debug.onTaskErrors": "abort",
   "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "[jsonc]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "codeium.enableConfig": {
+    "*": true,
+    "markdown": true
+  }
 }
