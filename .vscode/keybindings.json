@@ -226,6 +226,21 @@
     "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
   },
   {
+    "key": "space t t",
+    "command": "workbench.action.createTerminalEditor",
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
+  },
+  {
+    "key": "space t s",
+    "command": "workbench.action.terminal.newInActiveWorkspace",
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
+  },
+  {
+    "key": "space t v",
+    "command": "workbench.action.createTerminalEditorSide",
+    "when": "!editorTextFocus && !inputFocus && !codeActionMenuVisible && !focusSuggestion && !inFilesPicker && !suggestWidgetVisible"
+  },
+  {
     "key": "ctrl+n",
     "command": "workbench.action.files.newUntitledFile",
     "when": "editorFocus || inSettingsEditor || inKeybindings"

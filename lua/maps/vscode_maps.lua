@@ -184,6 +184,25 @@ M.config = function()
         { desc = "Close other tabs" }
     )
 
+    -- create terminal tab
+    vim.keymap.set(
+        'n',
+        "<leader>tt",
+        "<CMD>call VSCodeCall('workbench.action.createTerminalEditor')<CR>",
+        { desc = "Create terminal buffer" }
+    )
+    vim.keymap.set(
+        'n',
+        "<leader>ts",
+        "<CMD>call VSCodeCall('workbench.action.terminal.newInActiveWorkspace')<CR>",
+        { desc = "Create terminal buffer after horizontal split" }
+    )
+    vim.keymap.set('n',
+        "<leader>tv",
+        "<CMD>call VSCodeCall('workbench.action.createTerminalEditorSide')<CR>",
+        { desc = "Create terminal buffer after vertical split" }
+    )
+
     ---- from lua/maps/telescope_maps.lua
 
     -- find files
