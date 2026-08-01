@@ -616,8 +616,8 @@
   },
   {
     "key": "ctrl+t down",
-    "command": "workbench.action.terminal.focus",
-    "when": "!terminalFocus"
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "!terminalFocus || terminalEditorFocus"
   },
   {
     "key": "ctrl+t j",
@@ -633,11 +633,6 @@
     "key": "ctrl+t j",
     "command": "workbench.action.terminal.focusNextPane",
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "ctrl+t right",
-    "command": "workbench.action.terminal.focus",
-    "when": "!terminalFocus"
   },
   {
     "key": "ctrl+t l",
