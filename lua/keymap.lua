@@ -217,17 +217,23 @@ vim.keymap.set('n', "y´", "yi`", {
 if wnd.is_terminal() then
 
     -- open netrw
-    vim.keymap.set('n', "<C-e>", "<CMD>Ex %:p:h<CR>", {
-        desc = "Open Netrw Explorer"
-    })
+    vim.keymap.set('n', "<C-e>", function()
+        vim.cmd("Ex %:p:h")
+        if vim.g.netrw_sort_direction:match("^r") then
+            vim.api.nvim_feedkeys("r", "m", true)
+        end
+    end, { desc = "Open Netrw Explorer", })
 
     -- no more line scroll, because <C-e> is occupied by netrw
     vim.keymap.set('n', "<C-y>", "<nop>")
 
     -- open netrw in new tab
-    vim.keymap.set('n', "<C-Space>", "<CMD>Tex<CR>:e ", {
-        desc = "Open Netrw Explorer in new tab"
-    })
+    vim.keymap.set('n', "<C-Space>", function()
+        vim.cmd("Tex %:e")
+        if vim.g.netrw_sort_direction:match("^r") then
+            vim.api.nvim_feedkeys("r", "m", true)
+        end
+    end, { desc = "Open Netrw Explorer in new tab", })
 
     -- internal netrw maps
     vim.api.nvim_create_autocmd('filetype', {
@@ -296,5 +302,13 @@ if wnd.is_terminal() then
     vim.keymap.set('n', "gC", "<CMD>Code<CR>", {
         desc = "Open current file in VSCode"
     })
+
+    -- go to agentic prompts (netrw)
+    vim.keymap.set('n', "gp", function()
+        vim.cmd("e .agents/prompts")
+        if not vim.g.netrw_sort_direction:match("^r") then
+            vim.api.nvim_feedkeys("r", "m", false)
+        end
+    end, { desc = "Go to prepared agentic prompts", })
 
 end
