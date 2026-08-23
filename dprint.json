@@ -9,6 +9,9 @@
     ]
   },
   "markdown": {
+    "associations": [
+      "*.md.jinja"
+    ],
     "lineWidth": 80,
     "textWrap": "always"
   },
