@@ -52,13 +52,11 @@ vim.api.nvim_create_autocmd({ 'BufReadPre' }, {
             },
             pattern = {
                 ["%.env%..*"] = "sh",
-                ["*.stackexchange.com_*.txt"] = "markdown",
+                ["*.*_*.txt"] = "markdown", -- firenvim filetypes for common domains
+                ["*.md.jinja"] = "markdown",
                 [".*/ansible/.*%.ya?ml"] = "yaml.ansible",
                 [".*ignore"] = "gitignore",
                 [".st*ignore"] = "cmacro",
-                ["github.com_*.txt"] = "markdown", -- firenvim filetypes for common domains
-                ["stackoverflow.com_*.txt"] = "markdown",
-                ["superuser.com_*.txt"] = "markdown",
             },
         })
     end,
@@ -66,8 +64,8 @@ vim.api.nvim_create_autocmd({ 'BufReadPre' }, {
 
 -- trigger ftplugins on BufEnter as well
 vim.api.nvim_create_autocmd("BufEnter", {
-  callback = function()
-    vim.cmd("doautocmd <nomodeline> FileType")
-  end,
+    callback = function()
+        vim.cmd("doautocmd <nomodeline> FileType")
+    end,
 })
 
