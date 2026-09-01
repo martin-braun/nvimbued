@@ -52,11 +52,13 @@ vim.api.nvim_create_autocmd({ 'BufReadPre' }, {
             },
             pattern = {
                 ["%.env%..*"] = "sh",
-                ["*.*_*.txt"] = "markdown", -- firenvim filetypes for common domains
+                ["*\\..*_.*.txt"] = "markdown", -- firenvim filetypes for common domains
                 ["*.md.jinja"] = "markdown",
+                [".*/rc/conf.d/.*"] = "sh",
+                [".*/rc/init.d/.*"] = "sh",
                 [".*/ansible/.*%.ya?ml"] = "yaml.ansible",
-                [".*ignore"] = "gitignore",
-                [".st*ignore"] = "cmacro",
+                ["\\..*ignore"] = "gitignore",
+                ["\\.st.*ignore"] = "cmacro",
             },
         })
     end,
