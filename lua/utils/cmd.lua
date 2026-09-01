@@ -3,8 +3,8 @@ local M = {}
 
 M.get_resolved_invoker_of = function(command)
     local p = sys.is_windows()
-        and io.popen("where " .. command .. " 2>/dev/null || echo ''")
-        or io.popen("command -v " .. command .. " 2>/dev/null || echo ''")
+        and io.popen("where " .. command .. " 2>/dev/null || echo")
+        or io.popen("command -v " .. command .. " 2>/dev/null || echo")
     if p ~= nil then
         local result = p:read()
         p:close()
