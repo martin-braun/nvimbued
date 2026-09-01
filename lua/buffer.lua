@@ -47,8 +47,10 @@ vim.api.nvim_create_autocmd({ 'BufReadPre' }, {
                 xaml = "xml",
             },
             filename = {
+                PKGBUILD="bash",
+                [".SRCINFO"]="text",
                 ["playbook.yml"] = "yaml.ansible",
-                ["requirements.yml"] = "yaml.ansible",
+                ["requirements.yml"] = "yaml.ansible"
             },
             pattern = {
                 ["%.env%..*"] = "sh",

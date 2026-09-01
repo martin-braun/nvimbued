@@ -41,7 +41,8 @@ end
 
 local get_shfmt_prgcall = function()
     return nvimbued.prgs.shfmt ..
-        ' --indent 0 -bn -ci -sr' ..
+        (vim.bo.filetype == 'bash' and ' -ln bash --indent 4' or ' --indent 0') ..
+        ' -bn -ci -sr' ..
         ' --filename ' ..
         '"' .. vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) .. '"'
 end
