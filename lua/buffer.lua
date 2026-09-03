@@ -31,19 +31,21 @@ vim.api.nvim_create_autocmd({ 'BufReadPre' }, {
     callback = function()
         vim.filetype.add({
             extension = {
-                arb = "json",
-                bru = "json",
                 ["code-snippets"] = "json",
                 ["code-workspace"] = "json",
+                arb = "json",
+                bru = "json",
+                confd = "sh",
                 dockerignore = "gitignore",
-                rsyncignore = "gitignore",
                 fvmrc = "json",
+                inid = "sh",
                 log = "log",
                 plist = "xml",
                 rc = "sh",
                 reg = "dosini",
-                stignore = "cmacro",
+                rsyncignore = "gitignore",
                 stglobalignore = "cmacro",
+                stignore = "cmacro",
                 xaml = "xml",
             },
             filename = {
@@ -54,11 +56,11 @@ vim.api.nvim_create_autocmd({ 'BufReadPre' }, {
             },
             pattern = {
                 ["%.env%..*"] = "sh",
-                ["*\\..*_.*.txt"] = "markdown", -- firenvim filetypes for common domains
                 ["*.md.jinja"] = "markdown",
+                ["*\\..*_.*.txt"] = "markdown", -- firenvim filetypes for common domains
+                [".*/ansible/.*%.ya?ml"] = "yaml.ansible",
                 [".*/rc/conf.d/.*"] = "sh",
                 [".*/rc/init.d/.*"] = "sh",
-                [".*/ansible/.*%.ya?ml"] = "yaml.ansible",
                 ["\\..*ignore"] = "gitignore",
                 ["\\.st.*ignore"] = "cmacro",
             },
