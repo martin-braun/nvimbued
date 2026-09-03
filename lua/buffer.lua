@@ -27,46 +27,46 @@ vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 -- filetype definitions
-vim.api.nvim_create_autocmd({ 'BufReadPre' }, {
-    callback = function()
-        vim.filetype.add({
-            extension = {
-                ["code-snippets"] = "json",
-                ["code-workspace"] = "json",
-                arb = "json",
-                bru = "json",
-                confd = "sh",
-                dockerignore = "gitignore",
-                fvmrc = "json",
-                inid = "sh",
-                log = "log",
-                plist = "xml",
-                rc = "sh",
-                reg = "dosini",
-                rsyncignore = "gitignore",
-                stglobalignore = "cmacro",
-                stignore = "cmacro",
-                xaml = "xml",
-            },
-            filename = {
-                PKGBUILD="bash",
-                [".SRCINFO"]="text",
-                ["playbook.yml"] = "yaml.ansible",
-                ["requirements.yml"] = "yaml.ansible"
-            },
-            pattern = {
-                ["%.env%..*"] = "sh",
-                ["*.md.jinja"] = "markdown",
-                ["*\\..*_.*.txt"] = "markdown", -- firenvim filetypes for common domains
-                [".*/ansible/.*%.ya?ml"] = "yaml.ansible",
-                [".*/rc/conf.d/.*"] = "sh",
-                [".*/rc/init.d/.*"] = "sh",
-                ["\\..*ignore"] = "gitignore",
-                ["\\.st.*ignore"] = "cmacro",
-            },
-        })
-    end,
+-- vim.api.nvim_create_autocmd({ 'BufReadPre' }, {
+--     callback = function()
+vim.filetype.add({
+    extension = {
+        ["code-snippets"] = "json",
+        ["code-workspace"] = "json",
+        arb = "json",
+        bru = "json",
+        confd = "sh",
+        dockerignore = "gitignore",
+        fvmrc = "json",
+        initd = "sh",
+        log = "log",
+        plist = "xml",
+        rc = "sh",
+        reg = "dosini",
+        rsyncignore = "gitignore",
+        stglobalignore = "cmacro",
+        stignore = "cmacro",
+        xaml = "xml",
+    },
+    filename = {
+        PKGBUILD="bash",
+        [".SRCINFO"]="text",
+        ["playbook.yml"] = "yaml.ansible",
+        ["requirements.yml"] = "yaml.ansible"
+    },
+    pattern = {
+        ["%.env%..*"] = "sh",
+        ["*.md.jinja"] = "markdown",
+        ["*\\..*_.*.txt"] = "markdown", -- firenvim filetypes for common domains
+        [".*/ansible/.*%.ya?ml"] = "yaml.ansible",
+        [".*/rc/conf.d/.*"] = "sh",
+        [".*/rc/init.d/.*"] = "sh",
+        ["\\..*ignore"] = "gitignore",
+        ["\\.st.*ignore"] = "cmacro",
+    },
 })
+--     end,
+-- })
 
 -- trigger ftplugins on BufEnter as well
 vim.api.nvim_create_autocmd("BufEnter", {
