@@ -52,7 +52,8 @@ vim.filetype.add({
         PKGBUILD="bash",
         [".SRCINFO"]="text",
         ["playbook.yml"] = "yaml.ansible",
-        ["requirements.yml"] = "yaml.ansible"
+        ["requirements.yml"] = "yaml.ansible",
+        ["sxhkdrc"] = "text"
     },
     pattern = {
         ["%.env%..*"] = "sh",
