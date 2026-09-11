@@ -4,6 +4,7 @@ local imports = {
     { wnd.is_terminal(), "buf_exit_guard" },
     { wnd.is_terminal(), "buf_quit_hidden" },
     { wnd.is_terminal(), "code" },
+    { wnd.is_terminal(), "exec" },
     { wnd.is_terminal(), "git_tree" },
     { wnd.is_terminal(), "grep" },
 }
