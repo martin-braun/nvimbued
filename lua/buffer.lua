@@ -59,6 +59,8 @@ vim.filetype.add({
         ["%.env%..*"] = "sh",
         ["*.md.jinja"] = "markdown",
         ["*\\..*_.*.txt"] = "markdown", -- firenvim filetypes for common domains
+        [".*/.openrc/.*/conf.d/.*"] = "sh",
+        [".*/.openrc/.*/init.d/.*"] = "sh",
         [".*/ansible/.*%.ya?ml"] = "yaml.ansible",
         [".*/rc/conf.d/.*"] = "sh",
         [".*/rc/init.d/.*"] = "sh",
