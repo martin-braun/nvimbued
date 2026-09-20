@@ -209,6 +209,16 @@ vim.keymap.set('n', "<C-w>|", "32<C-w>_", {
     desc = "Minimize window vertically"
 })
 
+-- move viewport to the left
+vim.keymap.set('n', "zh", "24zh", {
+    desc = "Move viewport to the left"
+})
+
+-- move viewport to the right
+vim.keymap.set('n', "zl", "24zl", {
+    desc = "Move viewport to the right"
+})
+
 -- yank inner backticks
 vim.keymap.set('n', "y´", "yi`", {
     desc = "Yank inner backticks"
