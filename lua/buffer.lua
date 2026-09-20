@@ -62,6 +62,7 @@ vim.filetype.add({
         [".*/.openrc/.*/conf.d/.*"] = "sh",
         [".*/.openrc/.*/init.d/.*"] = "sh",
         [".*/ansible/.*%.ya?ml"] = "yaml.ansible",
+        [".*/flatpak/overrides/.*"] = "ini",
         [".*/rc/conf.d/.*"] = "sh",
         [".*/rc/init.d/.*"] = "sh",
         ["\\..*ignore"] = "gitignore",
