@@ -1,7 +1,16 @@
+.copier-answers.yml
+.rsyncignore
 .tmp/*
 !/.tmp/.gitkeep
 /minimal.lua
 /nvim_issue
+
+.agents
+.opencode
+opencode.json
+AGENTS.md
+CONTEXT.md
+SPEC.md
 
 # Created by https://www.toptal.com/developers/gitignore/api/linux,macos,windows,vim
 # Edit at https://www.toptal.com/developers/gitignore?templates=linux,macos,windows,vim

@@ -101,6 +101,7 @@ M.config = function()
     -- TONSKY INSPIRED SYNTAX FIXES LIGHT
     --
     local lightpal = require(M.main .. ".palette").load("dayfox")
+    lightpal.bg1 = "#ffffff"
     lightpal.black = Shade.new("#191b24", 0.35, -0.35)
     lightpal.blue = Shade.new("#9db9f4", 0.35, -0.35)
     lightpal.cyan = Shade.new("#63cdcf", 0.35, -0.35)
@@ -109,7 +110,7 @@ M.config = function()
     lightpal.orange = Shade.new("#f4a261", 0.35, -0.35)
     lightpal.pink = Shade.new("#d67ad2", 0.35, -0.35)
     lightpal.red = Shade.new("#f06372", 0.35, -0.35)
-    lightpal.transparent = "#fffff0" -- TODO: Change to `NONE` after https://github.com/neovim/neovim/issues/37874 has been fixed.
+    lightpal.transparent = "#ffffff" -- TODO: Change to `NONE` after https://github.com/neovim/neovim/issues/37874 has been fixed.
     lightpal.white = Shade.new("#dfdfe0", 0.35, -0.35)
     lightpal.yellow = Shade.new("#edc57d", 0.35, -0.35)
     --
@@ -287,7 +288,7 @@ M.config = function()
     commontheme["@markup.strong"] = { link = "Bold" }
     commontheme["@punctuation.special"] = { link = "Special" } -- special symbols (e.g. `{}` in string interpolation)
     --
-    nightfox.setup({
+    local opts = {
         options = {
             transparent = true,
             styles = stl
@@ -308,10 +309,19 @@ M.config = function()
                 lighttheme
             )
         }
+    }
+    -- runs on startup and when system theme changes:
+    vim.api.nvim_create_autocmd("ColorSchemePre", {
+        group = vim.api.nvim_create_augroup("NvimbuedNightfoxTransparency", { clear = true }),
+        pattern = { "carbonfox", "dayfox" },
+        callback = function(event)
+            -- ColorSchemePre runs before the new scheme updates 'background'.
+            opts.options.transparent = event.match ~= "dayfox"
+            nightfox.setup(opts)
+        end
     })
     -- -- bracket matching highlights
     -- vim.cmd([[hi MatchParen guifg=#ffffff]])
 end
 
 return M
-
