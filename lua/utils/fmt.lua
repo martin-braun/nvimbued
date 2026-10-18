@@ -7,12 +7,12 @@ local get_dprint_prgcall = function()
         vim.tbl_contains(nvimbued.configured_formatters, "dprint") then
         return nvimbued.prgs.dprint .. ' fmt' ..
             ' --stdin ' .. '"' ..
-            vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) .. '"'
+            vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ':t') .. '"'
     end
     -- as fallback we use a local config in this vim configuration (nvim only):
     return nvimbued.prgs.dprint .. ' fmt' ..
         ' --stdin ' ..
-        '"' .. vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) .. '"' ..
+        '"' .. vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ':t') .. '"' ..
         ' -c ' ..
         '"' ..
         vim.fn.stdpath('config') .. package.config:sub(1, 1) ..
