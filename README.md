@@ -124,7 +124,7 @@ To automatically reload the persistent session that is created when hitting
 `<Space>ss`, please add this alias your rc files:
 
 ```sh
-alias vim='{ f() { command -v nvim >/dev/null 2>&1 && { export NVIM_APPNAME="nvim" && export DEEPL_AUTH_KEY="$(sshstore deepl-key)" && { test "$#" -eq 0 && nvim +"sil! so Session.vim" || nvim "$@"; }; } || vim "$@"; }; }; f'
+alias vim='{ f() { command -v nvim >/dev/null 2>&1 && { export NVIM_APPNAME="nvim" && export DEEPL_AUTH_KEY="$(sshstore deepl-key)" && { test "$#" -eq 0 && nvim +"sil! so Session.vim" || nvim "$@"; }; } || vim "$@"; }; } && f'
 ```
 
 > [!NOTE]
@@ -139,8 +139,8 @@ alias vim='{ f() { command -v nvim >/dev/null 2>&1 && { export NVIM_APPNAME="nvi
 > By the way, `deepl.vim` is also compatible with Visual Studio Code or one of
 > its supported forks, but you have to launch the IDE from within `nvim`, unless
 > you set the `DEEPL_AUTH_KEY` environment variable in an alias that covers the
-> `code` CLI launcher as well. This all leads to the fact that
-> launching any VSCode forks from your App Drawer will disable the plugin.
+> `code` CLI launcher as well. This all leads to the fact that launching any
+> VSCode forks from your App Drawer will disable the plugin.
 
 ### Finalize
 
