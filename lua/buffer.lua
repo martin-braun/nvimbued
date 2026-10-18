@@ -65,6 +65,8 @@ vim.filetype.add({
         [".*/flatpak/overrides/.*"] = "ini",
         [".*/rc/conf.d/.*"] = "sh",
         [".*/rc/init.d/.*"] = "sh",
+        ["\\.*.conf.example"] = "conf",
+        ["\\.*.ini.example"] = "ini",
         ["\\..*ignore"] = "gitignore",
         ["\\.st.*ignore"] = "cmacro",
     },
