@@ -304,8 +304,11 @@ if wnd.is_terminal() then
     })
 
     -- update plugins
-    vim.keymap.set('n', "<leader>uu", "<CMD>Lazy update<CR>", {
-        desc = "Update plugins"
+    vim.keymap.set('n', "<leader>uu", function()
+        vim.cmd("Lazy update")
+        vim.cmd("DprintUpdate")
+    end, {
+        desc = "Update Lazy and dprint plugins"
     })
 
     -- open VSCode

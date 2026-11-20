@@ -25,8 +25,10 @@ you.
 
 - State of the art plugin system using `lazy.nvim` with folke's clear
   suggestions using the one-spec-per-file approach and prefering `main`/`opts`
-  over the `config` callback, open Lazy via `<Space>l`, update your all plugins
-  with `<Space>uu`
+  over the `config` callback, open Lazy via `<Space>l`, update all plugins with
+  `<Space>uu` and asynchronously update dprint plugins in this Neovim
+  configuration's `dprint.json` (not the current project's), or run
+  `:DprintUpdate` for the dprint plugin update alone
 - State of the art fuzzy finding using `telescope.nvim` via `ripgrep` with
   improved defaults such as a sane dynamic layout strategy and a consistent
   result ordering, `<Space>b` to navigate buffers, `<Space>e` to find files and
