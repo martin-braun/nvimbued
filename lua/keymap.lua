@@ -324,4 +324,12 @@ if wnd.is_terminal() then
         end
     end, { desc = "Go to prepared agentic prompts", })
 
+    -- go to agentic handoffs (netrw)
+    vim.keymap.set('n', "gh", function()
+        vim.cmd("e .agents/handoff-scripts")
+        if not vim.g.netrw_sort_direction:match("^r") then
+            vim.api.nvim_feedkeys("r", "m", false)
+        end
+    end, { desc = "Go to prepared agentic handoff scripts", })
+
 end
